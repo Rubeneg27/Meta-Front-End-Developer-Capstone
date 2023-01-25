@@ -4,7 +4,7 @@ import React from "react"
 import Footer from './Componentes/Footer'
 import Header from './Componentes/Header'
 import Main from './Componentes/Main'
-import Nav from './Componentes/Nav'
+
 
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
       </head>
       <body>
         <Header />
-        <Nav />
         <Main />
         <Footer />
       </body>
