@@ -1,8 +1,9 @@
 import React from "react"
+import Logo from "../icons_assets/Logo .svg"
 
 const logo = {
-  url:"",
-  text: "Little Lemon"
+  src:Logo,
+  text: ""
 }
 
 
@@ -10,7 +11,7 @@ function Header () {
  return (
     <header>          
 			<div className="logo-container">
-        <img src="logo.url" alt="logo"/>
+        <img width="100%" height="20%" src={logo.src} alt="logo"/>
         <h2>{logo.text}</h2>
       </div>
 			<ul className="nav-container">

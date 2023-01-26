@@ -16,7 +16,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background-color: rgb(105, 104, 104);
+  /*background-color: rgb(105, 104, 104);*/
   justify-content: left;
   width: 250px;
 
@@ -30,7 +30,7 @@ header {
 }
 
 .nav-container li{
-  /* background-color: rgb(165, 73, 73);*/
+
   padding: 20px;
   display: block;
   background-color: blueviolet;
