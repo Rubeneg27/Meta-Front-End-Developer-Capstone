@@ -13,8 +13,13 @@ header {
 
 }
 .logo-container {
- /* background-color: rgb(105, 104, 104);*/
-  margin-right: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: rgb(105, 104, 104);
+  justify-content: left;
+  width: 250px;
+
 }
 
 .nav-container{
@@ -26,18 +31,22 @@ header {
 
 .nav-container li{
   /* background-color: rgb(165, 73, 73);*/
-  padding: 10px;
+  padding: 20px;
   display: block;
+  background-color: blueviolet;
+  width: 30px;
+  text-align: center;
+  
  }
 
 
 .nav-container li a{
  /* background-color: rgb(165, 73, 73);*/
-  
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: black;
   text-decoration: none;
   font-weight: bold;
+  justify-self: center;
 }
 
 .about-container {
@@ -57,12 +66,61 @@ header {
   justify-content: space-between
 }
 
-.promo-title .button {
-  text-align: center;
+.promo-title button {
   font-weight: 600;
-  height: 25px;
+  height: 40px;
   width: 150px;
   border-radius: 7px;
-  border-color: rgb(156, 182, 109);
-  background-color: rgb(156, 182, 109);
+  border-color: rgb(236, 209, 54);
+  background-color: rgb(236, 209, 54);
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.card {
+  display: inline-block;
+  background-color: blueviolet;
+  width: 300px;
+  height: 400px;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.plato-text{
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: aqua;
+  height: 40%;
+  margin: 0;
+  
+}
+
+.card-img{
+  border-radius: 10px;
+  background-color: rgb(102, 201, 127);
+  height: 45%;
+  margin: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.plato-info{
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content:space-between;
+  background-color: rgb(166, 201, 102);
+  height: 7%;
+  margin: 0;
+}
+
+.plato-info h3 {
+  margin:0;
 }
