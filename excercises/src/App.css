@@ -3,7 +3,7 @@ body {
 
 }
 
-header {
+.header-desktop {
   margin-left: 15%;
   margin-right: 15%;
   display: flex;
@@ -26,6 +26,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  padding-inline-start: 0;
   /*background-color: rgb(73, 94, 165);*/
 }
 
@@ -34,7 +35,7 @@ header {
   padding: 20px;
   display: block;
   background-color: blueviolet;
-  width: 30px;
+  width: 9vh;
   text-align: center;
   
  }
@@ -42,7 +43,7 @@ header {
 
 .nav-container li a{
  /* background-color: rgb(165, 73, 73);*/
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: black;
   text-decoration: none;
   font-weight: bold;

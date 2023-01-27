@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Logo from "../icons_assets/Logo .svg"
 
 const logo = {
@@ -7,11 +7,32 @@ const logo = {
 }
 
 
-function Header () {
+const Header = () => {
+  
+
+  useEffect(()=> {
+    const handleResize = () => {
+      setDeviceType(getCurrentDeviceType());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+    window.removeEventListener('resize', handleResize)
+  }
+}, []);
+
+  const getInitialDeviceType = () => 
+    window.matchMedia("(max-width: 700px)").matches ? "mobile" : "desktop";
+  
+
+  const getCurrentDeviceType = () => 
+    window.matchMedia("(max-width: 700px)").matches ? "mobile" : "desktop";
+  
+    const [deviceType, setDeviceType] = useState(getInitialDeviceType());
  return (
-    <header>          
+    <header className= {`${deviceType === 'mobile' ? 'header-mobile' : 'header-desktop'}`}>          
 			<div className="logo-container">
-        <img width="100%" height="20%" src={logo.src} alt="logo"/>
+        <img width="100%" height="30%" src={logo.src} alt="logo"/>
         <h2>{logo.text}</h2>
       </div>
 			<ul className="nav-container">
