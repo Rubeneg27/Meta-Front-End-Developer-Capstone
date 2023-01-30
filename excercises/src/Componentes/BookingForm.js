@@ -3,11 +3,8 @@ import React, {useState} from "react"
 const BookingForm = (props) => {
     const [time, setTime] = useState("");
     const [availableTimes, setAvailableTimes] = useState([
-        {hour:"17:00"},
-        {hour:"18:00"},
-        {hour:"19:00"},
-        {hour:"20:00"},
-])
+      "17:00","18:00","19:00","20:00"
+    ])
     const formStyle = {
         display: "grid",
         maxwidth: "200px",
@@ -45,7 +42,7 @@ const BookingForm = (props) => {
             }
             >
                 {availableTimes.map((time)=> (
-                    <option>{time.hour}</option>
+                    <option>{time}</option>
                 ))}
 
              </select>
