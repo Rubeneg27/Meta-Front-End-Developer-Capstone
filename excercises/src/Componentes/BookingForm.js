@@ -1,10 +1,8 @@
 import React, {useState} from "react"
 
-const BookingForm = (props) => {
+const BookingForm = ({dispatch, availableTimes}) => {
     const [time, setTime] = useState("");
-    const [availableTimes, setAvailableTimes] = useState([
-      "17:00","18:00","19:00","20:00"
-    ])
+
     const formStyle = {
         display: "grid",
         maxwidth: "200px",
@@ -12,10 +10,11 @@ const BookingForm = (props) => {
     }
 
     const [date, setDate] = useState();
+
     const [guests, setGuests] = useState("1");
-    const handleSubmit = (e, handleTimeSelect) => {
+    
+    const handleSubmit = (e) => {
         e.preventDefault();
-        props.handleTimeSelect(time);
         alert("Thank you for booking with us!")
     }
 
@@ -28,15 +27,17 @@ const BookingForm = (props) => {
             <input 
             type="date" 
             id="res-date"
-            value={date}
+            value={date}       
             onChange={(e) => {
-                setDate(e.target.value)
+              e.preventDefault()
+              dispatch({type:"setDate"})
             }} 
             />
             <label for="res-time">Choose time</label>
             <select 
-            id="res-time "
-            value={time}
+            id="res-time"
+            data-testid="res-time"
+            value={time}   
             onChange={e => 
             setTime(e.target.value)
             }
@@ -44,9 +45,14 @@ const BookingForm = (props) => {
                 {availableTimes.map((time)=> (
                     <option>{time}</option>
                 ))}
-
              </select>
-             <label for="guests">Number of guests</label>
+             <button onClick={(e) => {
+                e.preventDefault()
+                dispatch ({type:"setDate"})
+                }}>
+                DISPATCH
+            </button> {/*PRUEBA*/}
+             <label data-test-id="guestsLabel" for="guests">Number of guests</label>
                 <input 
                 type="number"
                  placeholder="1" 

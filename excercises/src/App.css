@@ -125,3 +125,9 @@ body {
 .plato-info h3 {
   margin:0;
 }
+
+.BookingPage {
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: antiquewhite;
+}
