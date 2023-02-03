@@ -1,22 +1,25 @@
 import Card from "./Card"
 import bruchetta from "../icons_assets/bruchetta.svg"
+import greekSalad from "../icons_assets/greekSalad.jpg"
+import lemonDessert from "../icons_assets/lemonDessert.jpg"
+
 
 const cards = [
     {
         src:bruchetta,
-        title:"Plato 1",
-        text:"Descripción 1",
+        title:"Bruchetta",
+        text:"Taste our incredible bruchetta",
     },
     
     {
-        src:"dgs",
-        title:"Plato 2",
-        text:"Descripción 2",
+        src:greekSalad,
+        title:"greekSalad",
+        text:"Open your stomach with this gorgeous salad",
     },
     {
-        src:"asdf",
-        title:"Plato 3",
-        text:"Descripción 3",
+        src:lemonDessert,
+        title:"Lemon dessert",
+        text:"Finish your meal with the incredible citric dessert",
     },
     
 ];

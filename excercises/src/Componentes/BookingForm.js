@@ -23,30 +23,37 @@ const BookingForm = ({dispatch, availableTimes}) => {
         style={formStyle} 
         onSubmit={handleSubmit}
         >
-            <label for="res-date">Choose date</label>
-            <input 
-            type="date" 
-            id="res-date"
-            value={date}       
-            onChange={(e) => {
-              e.preventDefault()
-              dispatch({type:"setDate"})
-            }} 
-            />
-            <label for="res-time">Choose time</label>
-            <select 
-            id="res-time"
-            data-testid="res-time"
-            value={time}   
-            onChange={e => 
-            setTime(e.target.value)
-            }
-            >
+            <div className="date-time">
+              <div>
+              <label for="res-date">Choose date</label>
+              <input 
+                type="date" 
+                id="res-date"
+                value={date}       
+                onChange={(e) => {
+                e.preventDefault()
+                dispatch({type:"setDate"})
+              }} 
+              />
+              </div>
+              <div>
+              <label for="res-time">Choose time</label>
+              <select 
+              id="res-time"
+              data-testid="res-time"
+              value={time}   
+              onChange={e => 
+              setTime(e.target.value)
+              }
+              >
                 {availableTimes.map((time)=> (
                     <option>{time}</option>
                 ))}
              </select>
-             <button onClick={(e) => {
+
+            </div>
+            </div>
+            <button onClick={(e) => {
                 e.preventDefault()
                 dispatch ({type:"setDate"})
                 }}>
@@ -58,6 +65,8 @@ const BookingForm = ({dispatch, availableTimes}) => {
                 }}>
                 RESET
             </button> {/*RESET TESTING BUTTON*/}
+            <div className="num-oc">
+            <div>
              <label data-test-id="guestsLabel" for="guests">Number of guests</label>
                 <input 
                 type="number"
@@ -70,12 +79,15 @@ const BookingForm = ({dispatch, availableTimes}) => {
                     setGuests(e.target.value)
                  }}
                  />
-
+             </div>
+             <div>
              <label for="occasion">Occasion</label>
              <select id="occasion">
                 <option>Birthday</option>
                 <option>Anniversary</option>
              </select>
+             </div>
+             </div>
              <input 
              type="submit" 
              value="Make Your reservation" 

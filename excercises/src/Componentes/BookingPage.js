@@ -33,12 +33,19 @@ const BookingPage = () => {
   const [availableTimes, dispatch] = useReducer(updateTimes, initialTimes, initializeTimes); 
   
   return (
-    
     <div className="BookingPage">
+    <div className="Booking">
       <BookingForm
       dispatch={dispatch}
       availableTimes={availableTimes}
       />
+    </div>
+    <div className="bookingPreview">
+      <h3>Date</h3>
+      <h3>Time</h3>
+      <h3>Guests</h3>
+      <h3>Occasion</h3>
+    </div>
     </div>
     );
   };

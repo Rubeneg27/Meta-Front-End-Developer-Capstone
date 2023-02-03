@@ -127,7 +127,30 @@ body {
 }
 
 .BookingPage {
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
   margin-left: 15%;
   margin-right: 15%;
-  background-color: antiquewhite;
+  background-color: rgb(82, 109, 100);
+}
+
+.bookingPreview {
+  color: black;
+  background-color: aliceblue;
+  width: 60%;
+}
+
+form {
+  justify-content: center;
+}
+.date-time{
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.num-oc{
+  justify-content: space-evenly;
+  display: flex;
 }
