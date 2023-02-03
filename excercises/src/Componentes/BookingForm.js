@@ -51,7 +51,13 @@ const BookingForm = ({dispatch, availableTimes}) => {
                 dispatch ({type:"setDate"})
                 }}>
                 DISPATCH
-            </button> {/*PRUEBA*/}
+            </button> {/*DISPATCH TESTING BUTTON*/}
+            <button onClick={(e) => {
+                e.preventDefault()
+                dispatch ({type:""})
+                }}>
+                RESET
+            </button> {/*RESET TESTING BUTTON*/}
              <label data-test-id="guestsLabel" for="guests">Number of guests</label>
                 <input 
                 type="number"

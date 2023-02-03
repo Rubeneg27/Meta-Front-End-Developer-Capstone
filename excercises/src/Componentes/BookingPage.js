@@ -1,5 +1,7 @@
 import BookingForm from "./BookingForm"
 import React, {useReducer, useState, useEffect} from "react"
+import { fetchAPI } from "./dateGen";
+
 
 
 const initialTimes = ["10:00"]
@@ -11,26 +13,28 @@ const BookingPage = () => {
     }
 
   const updateTimes = (state, action) => {
-    if (action.type==="setDate") 
+    if (action.type==="setDate") {
     return state = ["éxito!"]
     }
-   
+    return initialTimes
+    } 
+
+   /*
     //FETCHING DATA
-    const [dateData, setDateData] = useState({});
+    const [date, setDateData] = useState({});
       useEffect(() => {
-        fetchApi(`https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js`)
+        fetchAPI(date)
         .then((response) => response.json())
         .then((jsonData) => setDateData(jsonData))
         .catch((error) => console.log(error))
       }, )
-    */
+   */
 
   const [availableTimes, dispatch] = useReducer(updateTimes, initialTimes, initializeTimes); 
   
   return (
     
     <div className="BookingPage">
-      {availableTimes}
       <BookingForm
       dispatch={dispatch}
       availableTimes={availableTimes}
