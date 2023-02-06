@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import Card from "./Card"
 import bruchetta from "../icons_assets/bruchetta.svg"
 import greekSalad from "../icons_assets/greekSalad.jpg"

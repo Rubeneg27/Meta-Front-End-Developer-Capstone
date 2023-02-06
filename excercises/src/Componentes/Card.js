@@ -1,9 +1,12 @@
+import React from 'react';
+
 const Card = ({url, title, text}) => {
     
     return (
-        <article className="card">  
+        <article>  
+        <div className="card">
             <div className="card-img">        
-                <img height="100%" width="100%" src={url} alt="imagen del plato"></img>
+                <img src={url} alt="imagen del plato"></img>
             </div>
             <div className="plato-info"> 
                 <h3>{title}</h3>
@@ -11,6 +14,8 @@ const Card = ({url, title, text}) => {
             </div>
             <p className="plato-text">{text}</p>
             <a href="x">Order here</a>
+            </div>
+            
         </article>
     )
 }

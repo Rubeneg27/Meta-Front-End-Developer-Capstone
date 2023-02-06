@@ -29,6 +29,7 @@ const Header = () => {
   
     const [deviceType, setDeviceType] = useState(getInitialDeviceType());
  return (
+  
     <header className= {`${deviceType === 'mobile' ? 'header-mobile' : 'header-desktop'}`}>          
 			<div className="logo-container">
         <img width="100%" height="30%" src={logo.src} alt="logo"/>

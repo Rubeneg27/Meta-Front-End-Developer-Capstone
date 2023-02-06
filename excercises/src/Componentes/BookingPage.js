@@ -4,7 +4,7 @@ import { fetchAPI } from "./dateGen";
 
 
 
-const initialTimes = ["10:00"]
+const initialTimes = ["10:00","11:00","12:00"]
 
 const BookingPage = () => {
   
@@ -14,7 +14,7 @@ const BookingPage = () => {
 
   const updateTimes = (state, action) => {
     if (action.type==="setDate") {
-    return state = ["éxito!"]
+    return state
     }
     return initialTimes
     } 
@@ -33,19 +33,11 @@ const BookingPage = () => {
   const [availableTimes, dispatch] = useReducer(updateTimes, initialTimes, initializeTimes); 
   
   return (
-    <div className="BookingPage">
     <div className="Booking">
       <BookingForm
       dispatch={dispatch}
       availableTimes={availableTimes}
       />
-    </div>
-    <div className="bookingPreview">
-      <h3>Date</h3>
-      <h3>Time</h3>
-      <h3>Guests</h3>
-      <h3>Occasion</h3>
-    </div>
     </div>
     );
   };
