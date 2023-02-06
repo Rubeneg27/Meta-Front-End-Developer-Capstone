@@ -11,6 +11,10 @@ const BookingForm = ({dispatch, availableTimes}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setDate("")
+        setGuests("")
+        setOcassion("")
+        setTime("")
         alert("Thank you for booking with us!")
     }
 
