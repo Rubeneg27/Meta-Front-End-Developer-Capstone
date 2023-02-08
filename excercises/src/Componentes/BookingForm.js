@@ -39,9 +39,9 @@ const BookingForm = ({dispatch, availableTimes}) => {
               </div>
               <div>
                 <label for="res-time">Choose time</label>
-                <select 
+                <select
+                key="time-selector"
                 id="res-time"
-                data-testid="res-time"
                 value={time}   
                 onChange={availableTimes => 
                   setTime(availableTimes.target.value)
@@ -84,7 +84,8 @@ const BookingForm = ({dispatch, availableTimes}) => {
              </div>
              <div>
              <label for="occasion">Occasion</label>
-             <select 
+             <select
+             key="ocassion-selector"
              value={ocassion}
              onChange={(e) => {setOcassion(e.target.value)
             }}
@@ -95,7 +96,8 @@ const BookingForm = ({dispatch, availableTimes}) => {
              </select>
              </div>
              </div>
-             <button 
+             <button
+             role="button"
              type="submit" 
              value="" 
              disabled={!time || !date || !guests}

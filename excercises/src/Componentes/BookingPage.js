@@ -1,6 +1,6 @@
 import BookingForm from "./BookingForm"
-import React, {useReducer, useState, useEffect} from "react"
 import { fetchAPI } from "./dateGen";
+import {useReducer} from 'react'
 
 
 
