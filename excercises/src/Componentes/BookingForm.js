@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const BookingForm = ({dispatch, availableTimes}) => {
     const [time, setTime] = useState("");
-    const [date, setDate] = useState();
+    const [date, setDate] = useState("");
     const [guests, setGuests] = useState("");
     const [ocassion, setOcassion] = useState("")
 
@@ -22,67 +22,44 @@ const BookingForm = ({dispatch, availableTimes}) => {
         <form 
         onSubmit={handleSubmit}
         >
-            <div className="date-time">
-              <div>
               <label 
               for="res-date">Choose date</label>
-              <input 
+              <input
                 type="date" 
                 id="res-date"
+                aria-label="Reservation Date"
                 value={date}       
                 onChange={(e) => {
-                  e.preventDefault()
-                  dispatch({type:"setDate"})
                   setDate(e.target.value)
+                  dispatch({ date: e.target.value })       
                 }} 
               />
-              </div>
-              <div>
                 <label for="res-time">Choose time</label>
                 <select
-                key="time-selector"
+                placeholder=''
                 id="res-time"
+                aria-label="Reservation Time"
                 value={time}   
-                onChange={availableTimes => 
-                  setTime(availableTimes.target.value)
-                }
+                onChange={(e) => setTime(e.target.value)}
                 >
                 {availableTimes.map((time)=> (
-                <option>{time}</option>
+                <option  key={time} value={time}>{time}</option>
                 ))}
+                <option disabled={true} value=""></option>
                 </select>
-            </div>
-            </div>
-            {/*DISPATCH TESTING BUTTON*/}
-            <button onClick={(e) => {
-                e.preventDefault()
-                dispatch ({type:"setDate"})
-                }}>
-                DISPATCH TESTING BUTTON
-            </button> 
-            {/*RESET TESTING BUTTON*/}
-            <button onClick={(e) => {
-                e.preventDefault()
-                dispatch ({type:""})
-                }}>
-                RESET TESTING BUTTON
-            </button> 
-            <div className="num-oc">
-            <div>
              <label data-test-id="guestsLabel" for="guests">Number of guests</label>
                 <input 
                 type="number"
-                 placeholder="1" 
+                 placeholder="0" 
                  min="1" 
                  max="10" 
                  id="guests" 
                  value={guests}
                  onChange={(e)=>{
-                    setGuests(e.target.value)
+                 setGuests(e.target.value)
                  }}
                  />
-             </div>
-             <div>
+                 {guests <= 0 ? <p className='errorMessage'>We are not cooking for less than 1 guests! </p> : null}
              <label for="occasion">Occasion</label>
              <select
              key="ocassion-selector"
@@ -91,21 +68,18 @@ const BookingForm = ({dispatch, availableTimes}) => {
             }}
              id="occasion"
              >
+               <option disabled={true} value=""></option>
                <option>Birthday</option>
                <option>Anniversary</option>
              </select>
-             </div>
-             </div>
              <button
-             role="button"
              type="submit" 
              value="" 
-             disabled={!time || !date || !guests}
+             disabled={!time || !date || !guests || !ocassion || guests <= 0}
              >
              Make Your reservation
              </button>
-             {time && date && guests && ocassion &&(<p>{`${guests} guests for day ${date} at ${time}. Happy ${ocassion}!` }</p>)}
-             
+             {time && date && guests > 0 && ocassion &&(<p className='resservation-message'>{`${guests} guests for day ${date} at ${time}. Happy ${ocassion}!` }</p>)}
         </form>
     )
 }

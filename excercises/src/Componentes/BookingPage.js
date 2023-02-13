@@ -1,36 +1,12 @@
 import BookingForm from "./BookingForm"
-import { fetchAPI } from "./dateGen";
+import { fetchAPI } from "../date_API";
 import {useReducer} from 'react'
 
-
-
-const initialTimes = ["10:00","11:00","12:00"]
-
+export const initializeTimes = fetchAPI(new Date())
+export const updateTimes = (state, action) => fetchAPI(new Date(action.date));
 const BookingPage = () => {
   
-  function initializeTimes (initialTimes) {
-    return initialTimes
-    }
-
-  const updateTimes = (state, action) => {
-    if (action.type==="setDate") {
-    return state
-    }
-    return initialTimes
-    } 
-
-   /*
-    //FETCHING DATA
-    const [date, setDateData] = useState({});
-      useEffect(() => {
-        fetchAPI(date)
-        .then((response) => response.json())
-        .then((jsonData) => setDateData(jsonData))
-        .catch((error) => console.log(error))
-      }, )
-   */
-
-  const [availableTimes, dispatch] = useReducer(updateTimes, initialTimes, initializeTimes); 
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes); 
   
   return (
     <div className="Booking">

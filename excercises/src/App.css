@@ -1,10 +1,11 @@
 body {
+  font-family: 'Karla';
   background-color: rgb(252, 252, 244);
 }
 
 .header-desktop {
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 20%;
+  margin-right: 20%;
   display: flex;
   /*background-color: blanchedalmond;*/
   justify-content: space-between;
@@ -50,16 +51,32 @@ body {
 }
 
 .about-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3%;
   width: 100%;
   height: 400px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   background-color: rgb(82, 109, 100);
-  margin: 0;
+}
+
+.about-container article {
+  margin-left: 20%;
+  width: 40%;
+}
+
+.aboutImage {
+  position: relative;
+  margin-right: 20%;
+  top: 30px;
+  width: 375px;
+  margin-bottom: -50px;
+  border-radius: 20px;
 }
 
 .promo-container {
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 .promo-title {
   display: flex;
@@ -112,7 +129,6 @@ body {
   width: 100%;
   height: 230px;
   margin-bottom: 8%;
-
 }
 
 .plato-info{
@@ -129,19 +145,25 @@ body {
   margin:0;
 }
 
-.Booking {
-  color: aliceblue;
-  justify-content: center;
-  padding: 5%;
-  margin-left: 15%;
-  margin-right: 15%;
-  background-color: rgb(82, 109, 100);
+form {
+  width: fit-content;
+  display: grid;
+  gap: 10px;
+  margin-inline: auto;
+  margin-block: 6rem;
 }
 
-form {
-  display: grid;
-  gap: 5%;
-  justify-content: center;
+form input, select {
+  border: #c2d8d1 solid 1px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  min-width: 20rem;
+}
+
+.resservation-message {
+  color: black;
+  background-color: aliceblue;
+  text-align: center;
 }
 .date-time{
   justify-content: space-evenly;
@@ -151,4 +173,8 @@ form {
 .num-oc{
   justify-content: space-evenly;
   display: flex;
+}
+
+.errorMessage {
+  color: crimson;
 }

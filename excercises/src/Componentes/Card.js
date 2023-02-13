@@ -5,8 +5,8 @@ const Card = ({url, title, text}) => {
     return (
         <article>  
         <div className="card">
-            <div className="card-img">        
-                <img src={url} alt="imagen del plato"></img>
+            <div>        
+                <img height='100%' src={url} alt="imagen del plato"></img>
             </div>
             <div className="plato-info"> 
                 <h3>{title}</h3>

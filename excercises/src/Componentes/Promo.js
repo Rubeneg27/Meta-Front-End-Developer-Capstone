@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 import Card from "./Card"
 import bruchetta from "../icons_assets/bruchetta.svg"
 import greekSalad from "../icons_assets/greekSalad.jpg"
@@ -7,7 +7,7 @@ import lemonDessert from "../icons_assets/lemonDessert.jpg"
 
 const cards = [
     {
-        src:bruchetta,
+        src:greekSalad,
         title:"Bruchetta",
         text:"Taste our incredible bruchetta",
     },
