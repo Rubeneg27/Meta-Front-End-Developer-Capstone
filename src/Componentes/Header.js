@@ -39,7 +39,7 @@ const Header = () => {
           <li><a href="#about-container">About</a></li>
           <li><a href="#About">Menu</a></li>
         </ul>
-        <ul>
+        <ul className="nav-container">
           <li><Link to="/BookingPage">Book</Link></li>
           <li><a href="#About">Order online</a></li>        
 		  	  <li><a href="#About">Login</a></li>
